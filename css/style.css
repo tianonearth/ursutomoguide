@@ -23,6 +23,7 @@ body{
     font-family: Belanosima;
     font-size: 17px;
     justify-content: flex-end;
+    padding: 10px 10px;
 }
 
 .search-bar {
@@ -33,7 +34,7 @@ body{
 
 .search-container {
     position: relative;
-    width: 250px;
+    width: 250;
     height: 35px;
     border: 1px solid #002b4a;
     border-radius: 20px;
@@ -117,11 +118,11 @@ nav ul li a:hover {
 .hero-content {
     text-align: center;
     z-index: 1;
-    max-width: 800px; /* Limit the width of the content for better readability */
+    max-width: 900px; /* Limit the width of the content for better readability */
 }
 
 .hero-content h1 {
-    font-size: 4.8rem;
+    font-size: 4.6rem;
     margin-bottom: 20px;
     line-height: 1.2;
     font-family: Belanosima;
@@ -181,4 +182,40 @@ footer {
     margin: 0;
     font-size: 11px;
     font-family: Belanosima;
+}
+
+
+
+
+
+
+
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    .top-bar {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items vertically */
+    }
+
+    .search-bar {
+        margin-bottom: 10px; /* Add some space between search bar and nav */
+    }
+
+    .search-container {
+        width: 90%; /* Make search bar wider on mobile */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: center; /* Center nav items */
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Add vertical spacing between nav items */
+    }
+
+    nav ul li a {
+        padding: 5px 10px; /* Adjust padding for nav links */
+    }
 }
