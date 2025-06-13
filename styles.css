@@ -26,6 +26,7 @@ body {
 header {
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  position: relative;
 }
 
 /* Logo */
@@ -78,7 +79,7 @@ header {
   background-color: #0062a0;
 }
 
-/* Mobile Menu Button (Right-Aligned) */
+/* Mobile Menu Button */
 .menu-btn {
   display: none;
   flex-direction: column;
@@ -148,10 +149,17 @@ header {
   max-width: 200px;
 }
 
-/* Main Section */
+/* Main Section - FIXED ALIGNMENT */
 .main-section {
   padding: 80px 40px;
-  background-color: #f9f9f9;
+  background: linear-gradient(
+    225deg, 
+    #fae17f 35%, 
+    #ffce3b 65%
+  );
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
 }
 
 .main-section .container {
@@ -160,8 +168,10 @@ header {
   align-items: center;
 }
 
+/* CONTENT FIXES START HERE */
 .content {
   max-width: 600px;
+  display: block; /* Changed from flex to block */
 }
 
 .content h2 {
@@ -169,35 +179,52 @@ header {
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #666;
+  margin-bottom: 10px;
+  text-align: left; /* Explicit left align */
 }
 
 .content h1 {
   font-size: clamp(32px, 5vw, 48px);
   line-height: 1.2;
-  margin: 10px 0 20px;
+  margin: 0 0 20px 0;
   color: #000;
+  text-align: left; /* Explicit left align */
 }
 
 .content p {
   font-size: 16px;
   color: #555;
+  margin-bottom: 30px;
+  text-align: left; /* Explicit left align */
+  max-width: 100%; /* Prevent overflow */
 }
 
+/* BUTTONS FIXED ALIGNMENT */
 .buttons {
   display: flex;
   gap: 20px;
   margin-top: 30px;
+  justify-content: flex-start; /* Force left alignment */
+  width: 100%;
+  padding: 0; /* Remove any padding */
+  margin-left: 0; /* Remove any left margin */
 }
 
 .buttons .download-btn {
   background-color: #0079c1;
   color: white;
-  padding: 10px 20px;
+  padding: 12px 24px;
   border: none;
   border-radius: 5px;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
+  transition: transform 0.2s;
+  margin-left: 0; /* Remove left margin */
+}
+
+.buttons .download-btn:hover {
+  transform: translateY(-2px);
 }
 
 .buttons .learn-more {
@@ -207,6 +234,11 @@ header {
   font-size: 16px;
   display: flex;
   align-items: center;
+  transition: transform 0.2s;
+}
+
+.buttons .learn-more:hover {
+  transform: translateX(5px);
 }
 
 .image {
@@ -220,29 +252,40 @@ header {
   object-fit: contain;
   border: 5px solid #0079c1;
   border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Advantages Section */
 .advantages-section {
   text-align: center;
-  padding: 60px 20px;
+  padding: 80px 20px;
+  background-color: #f9f9f9;
 }
 
 .advantages-btn {
   background-color: #0079c1;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 24px;
   border-radius: 5px;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
+  transition: all 0.3s;
+}
+
+.advantages-btn:hover {
+  background-color: #0062a0;
+  transform: translateY(-2px);
 }
 
 .advantages-section p {
   font-size: 16px;
   margin-top: 20px;
   color: #555;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Media Queries */
@@ -255,13 +298,23 @@ header {
     display: flex;
   }
 
+  .main-section {
+    padding: 60px 20px;
+  }
+
   .main-section .container {
     flex-direction: column;
-    text-align: center;
   }
 
   .content {
+    text-align: center;
     margin-bottom: 40px;
+  }
+
+  .content h2,
+  .content h1,
+  .content p {
+    text-align: center; /* Center align on mobile */
   }
 
   .content h1 {
@@ -271,11 +324,8 @@ header {
   .buttons {
     flex-direction: column;
     gap: 15px;
-  }
-
-  .buttons .download-btn,
-  .buttons .learn-more {
-    justify-content: center;
+    width: 100%;
+    justify-content: center; /* Center buttons on mobile */
   }
 
   .image img {
