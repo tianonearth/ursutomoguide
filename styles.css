@@ -27,6 +27,7 @@ header {
   background-color: #fff;
   padding: 20px 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  position: relative;
 }
 
 .logo img {
@@ -51,7 +52,6 @@ header {
   font-weight: bold;
 }
 
-/* YOUR ORIGINAL BUTTON STYLES (No changes) */
 .download-btn {
   background-color: #0079c1;
   color: white;
@@ -64,7 +64,7 @@ header {
   margin-left: 25px;
 }
 
-/* Mobile Menu Button (Hidden on Desktop) */
+/* Mobile Menu Button */
 .menu-btn {
   display: none;
   flex-direction: column;
@@ -74,6 +74,7 @@ header {
   cursor: pointer;
   background: none;
   border: none;
+  z-index: 1100;
 }
 
 .menu-btn .bar {
@@ -81,9 +82,10 @@ header {
   width: 100%;
   height: 3px;
   background-color: #333;
+  transition: transform 0.3s, opacity 0.3s;
 }
 
-/* Mobile Navigation Drawer (Hidden by Default) */
+/* Mobile Navigation */
 .mobile-nav {
   position: fixed;
   top: 0;
@@ -99,6 +101,7 @@ header {
   justify-content: center;
   align-items: center;
   padding: 40px;
+  text-align: center;
 }
 
 .mobile-nav.active {
@@ -107,28 +110,25 @@ header {
 
 .mobile-nav ul {
   list-style: none;
-  text-align: center;
   margin-bottom: 30px;
+  width: 100%;
 }
 
 .mobile-nav ul li {
-  margin: 15px 0;
+  margin: 20px 0;
 }
 
 .mobile-nav ul li a {
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
   color: #333;
   font-weight: bold;
+  display: block;
 }
 
 .mobile-nav .download-btn {
-  background-color: #0079c1;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-weight: bold;
-  font-size: 16px;
+  width: 80%;
+  max-width: 200px;
 }
 
 /* Main Section */
@@ -223,19 +223,16 @@ header {
   color: #555;
 }
 
-/* Media Queries (Mobile) */
+/* Media Queries */
 @media (max-width: 768px) {
-  /* Hide desktop nav on mobile */
   .desktop-nav {
     display: none;
   }
 
-  /* Show mobile menu button */
   .menu-btn {
     display: flex;
   }
 
-  /* Stack content vertically */
   .main-section .container,
   .container {
     flex-direction: column;
@@ -244,21 +241,26 @@ header {
 
   .content {
     max-width: 100%;
+    text-align: center;
+  }
+
+  .content h1 {
+    font-size: 32px;
   }
 
   .image {
     margin-top: 20px;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .image img {
     width: 100%;
-    max-width: 250px;
+    max-width: 200px;
   }
 
   .buttons {
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     width: 100%;
   }
 
@@ -266,5 +268,6 @@ header {
   .buttons .learn-more {
     width: 100%;
     text-align: center;
+    justify-content: center;
   }
 }
