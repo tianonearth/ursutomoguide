@@ -16,7 +16,7 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,13 +25,18 @@ body {
 /* Header */
 header {
   background-color: #fff;
-  padding: 20px 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  position: relative;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
 }
 
 .logo img {
   height: 30px;
+  width: auto;
 }
 
 /* Desktop Navigation */
@@ -44,12 +49,16 @@ header {
   list-style: none;
   display: flex;
   gap: 25px;
+  align-items: center;
 }
 
 .nav-links li a {
   text-decoration: none;
   color: #333;
   font-weight: bold;
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
 }
 
 .download-btn {
@@ -62,20 +71,27 @@ header {
   font-weight: bold;
   cursor: pointer;
   margin-left: 25px;
+  transition: background-color 0.3s;
 }
 
-/* Mobile Menu Button */
+.download-btn:hover {
+  background-color: #0062a0;
+}
+
+/* Mobile Menu Button (Right-Aligned) */
 .menu-btn {
   display: none;
   flex-direction: column;
-  justify-content: space-between;
-  height: 20px;
+  justify-content: center;
+  height: 30px;
   width: 30px;
   cursor: pointer;
   background: none;
   border: none;
+  padding: 0;
+  margin-left: auto;
+  position: relative;
   z-index: 1100;
-  margin-left: auto; /* Pushes button to the right */
 }
 
 .menu-btn .bar {
@@ -84,6 +100,7 @@ header {
   height: 3px;
   background-color: #333;
   transition: transform 0.3s, opacity 0.3s;
+  margin: 3px 0;
 }
 
 /* Mobile Navigation */
@@ -124,7 +141,6 @@ header {
   font-size: 18px;
   color: #333;
   font-weight: bold;
-  display: block;
 }
 
 .mobile-nav .download-btn {
@@ -136,6 +152,12 @@ header {
 .main-section {
   padding: 80px 40px;
   background-color: #f9f9f9;
+}
+
+.main-section .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .content {
@@ -150,15 +172,14 @@ header {
 }
 
 .content h1 {
-  font-size: 48px;
+  font-size: clamp(32px, 5vw, 48px);
   line-height: 1.2;
-  margin-top: 10px;
+  margin: 10px 0 20px;
   color: #000;
 }
 
 .content p {
   font-size: 16px;
-  margin-top: 20px;
   color: #555;
 }
 
@@ -234,41 +255,31 @@ header {
     display: flex;
   }
 
-  .main-section .container,
-  .container {
+  .main-section .container {
     flex-direction: column;
-    align-items: flex-start;
+    text-align: center;
   }
 
   .content {
-    max-width: 100%;
-    text-align: center;
+    margin-bottom: 40px;
   }
 
   .content h1 {
     font-size: 32px;
   }
 
-  .image {
-    margin-top: 20px;
-    align-items: center;
-  }
-
-  .image img {
-    width: 100%;
-    max-width: 200px;
-  }
-
   .buttons {
     flex-direction: column;
     gap: 15px;
-    width: 100%;
   }
 
   .buttons .download-btn,
   .buttons .learn-more {
-    width: 100%;
-    text-align: center;
     justify-content: center;
+  }
+
+  .image img {
+    width: 200px;
+    height: 200px;
   }
 }
