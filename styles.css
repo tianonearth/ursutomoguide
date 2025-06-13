@@ -75,6 +75,7 @@ header {
   background: none;
   border: none;
   z-index: 1100;
+  margin-left: auto; /* Pushes button to the right */
 }
 
 .menu-btn .bar {
