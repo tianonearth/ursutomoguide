@@ -1,0 +1,402 @@
+/* ===== teachersstyle.css ===== */
+/* GLOBAL STYLES (MATCHING INDEX.HTML) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+/* ===== HEADER (100% IDENTICAL TO INDEX.HTML) ===== */
+header {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid black;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 47px;
+  width: auto;
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  font-family: 'Barriecito', sans-serif;
+  color: #000000;
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #aa8414;
+  transform: scale(1.1);
+  transition:all 0.3s;
+}
+
+.nav-links li a.active {
+  color: #aa8414;
+}
+
+.download-btn {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: 'Barriecito', sans-serif;
+  cursor: pointer;
+  margin-left: 25px;
+  transition: all 0.3s;
+}
+
+.download-btn:hover {
+  color: #aa8414;
+  font-size: 18px;
+}
+
+/* Mobile Menu */
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: auto;
+  position: relative;
+  z-index: 1100;
+}
+
+.menu-btn .bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  transition: transform 0.3s, opacity 0.3s;
+  margin: 3px 0;
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  text-align: center;
+  font-family: 'Barriecito', sans-serif;
+}
+
+.mobile-nav.active {
+  transform: translateY(0);
+}
+
+.mobile-nav ul {
+  list-style: none;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.mobile-nav ul li {
+  margin: 20px 0;
+}
+
+.mobile-nav ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* ===== TEACHERS PAGE SPECIFIC STYLES ===== */
+/* Subject Scroller */
+.subject-section {
+  width: 100%;
+  padding: 20px 0;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.subject-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  height: 60px; /* Fixed height for consistent alignment */
+}
+
+.subjects-scroll {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0px;
+  width: 100%;
+  scrollbar-width: none;
+  align-items: center; /* Vertically center subjects */
+  height: 100%; /* Fill container height */
+  margin: 0 15px; /* Space between arrows and subjects */
+}
+
+.subjects-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.subject {
+  padding: 0 25px;
+  background: white;
+  border-radius: 30px;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  font-family: 'Barriecito', sans-serif;
+  transition: all 0.3s;
+  height: 40px; /* Fixed height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.subject.active {
+  background: #4b3800;
+  color: white;
+}
+
+.subject:hover {
+  background: #866500;
+  color: white;
+  transition: all 0.3s;
+}
+
+.scroll-arrow {
+  background: #f1e190;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.3s;
+  margin: 0 15px; /* Space between arrows and subjects */
+  position: static; /* Remove absolute positioning if any */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-arrow:hover {
+  background: #e0d180;
+}
+
+.scroll-arrow.left-arrow {
+  margin-right: 15px; /* Space after left arrow */
+}
+
+.scroll-arrow.right-arrow {
+  margin-left: 15px; /* Space before right arrow */
+}
+
+.scroll-arrow:hover {
+  transform: scale(1.1);
+  background: #e0d180;
+}
+
+
+
+
+
+
+
+
+/* Teacher Cards Grid */
+.teacher-section {
+  width: 100%;
+  padding: 40px 0;
+}
+
+.teacher-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 50px; /* Add space for arrows */
+  position: relative;
+}
+
+.teacher-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(150px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  margin: 0 -10px; /* Allow cards to bleed under arrows */
+  width: 100%;
+  overflow: hidden;
+
+}
+
+.teacher-card {
+  background: #f5f5f5;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  aspect-ratio: 1/1.2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.3s;
+}
+
+.teacher-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.teacher-card h3 {
+  font-family: 'Faculty Glyphic', sans-serif;
+  margin: 10px 0 5px;
+  color: #4b3800;
+}
+
+.teacher-card p {
+  font-family: 'Coming Soon', sans-serif;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.teacher-card:hover {
+  background:#c9c9c9;
+  transition: background-color 0.3s;
+}
+
+.more-info-btn {
+  display: inline-block;
+  padding: 8px 20px;
+  background: #f1e190;
+  color: #4b3800;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: 'Faculty Glyphic', sans-serif;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.more-info-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.scroll-arrow.teacher-left,
+.scroll-arrow.teacher-right {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Precise centering */
+  z-index: 2; /* Ensure arrows appear above cards */
+}
+
+.scroll-arrow.teacher-left {
+  left: 25px;
+}
+
+.scroll-arrow.teacher-right {
+  right: 35px;
+}
+
+
+
+
+
+
+
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+  .teacher-cards-grid {
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .menu-btn {
+    display: flex;
+  }
+
+  .subject-container,
+  .teacher-container {
+    padding: 0 20px;
+  }
+
+  .teacher-cards-grid {
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .teacher-cards-grid {
+    grid-template-columns: repeat(1, minmax(200px, 1fr));
+  }
+}

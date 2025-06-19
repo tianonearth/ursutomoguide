@@ -3,32 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teachers</title>
+  <title>Teachers | USG</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Caveat+Brush&family=Coming+Soon&family=Faculty+Glyphic&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/teachersstyle.css">
 </head>
 <body>
-  <!-- Header -->
+  <!-- Header (same as index.html) -->
   <header>
     <div class="container">
       <div class="logo">
         <img src="usg-logo.png" alt="Logo" class="hlogo">
       </div>
       
-      <!-- Desktop Navigation -->
       <nav class="desktop-nav">
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="teachers.html">Teachers</a></li>
+          <li><a href="teachers.html" class="active">Teachers</a></li>
           <li><a href="laboratories.html">Laboratories</a></li>
           <li><a href="about.html">About</a></li>
         </ul>
         <button class="download-btn">Search...</button>
       </nav>
       
-      <!-- Mobile Hamburger Button -->
       <button class="menu-btn">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -36,11 +34,10 @@
       </button>
     </div>
   
-    <!-- Mobile Navigation Drawer -->
     <nav class="mobile-nav" id="mobileNav">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="teachers.html">Teachers</a></li>
+        <li><a href="teachers.html" class="active">Teachers</a></li>
         <li><a href="laboratories.html">Laboratories</a></li>
         <li><a href="about.html">About</a></li>
       </ul>
@@ -48,26 +45,81 @@
     </nav>
   </header>
 
-  <!-- Main Content -->
-  <div class="content-wrapper">
-    <!-- Left Tabs -->
-    <div class="subject-tabs">
-      <div class="tab active" data-subject="math">Math</div>
-      <div class="tab" data-subject="biology">Biology</div>
-      <div class="tab" data-subject="physics">Physics</div>
-      <div class="tab" data-subject="chemistry">Chemistry</div>
-      <div class="tab" data-subject="history">History</div>
-      <div class="tab" data-subject="geography">Geography</div>
-      <div class="tab" data-subject="art">Art</div>
-      <div class="tab" data-subject="music">Music</div>
+  <!-- Subject Scroll Section -->
+  <section class="subject-section">
+    <div class="subject-container">
+      <button class="scroll-arrow left-arrow">←</button>
+      <div class="subjects-scroll">
+        <div class="subject active" data-subject="math">Math</div>
+        <div class="subject" data-subject="biology">Biology</div>
+        <div class="subject" data-subject="physics">Physics</div>
+        <div class="subject" data-subject="chemistry">Chemistry</div>
+        <div class="subject" data-subject="history">History</div>
+        <div class="subject" data-subject="geography">Geography</div>
+        <div class="subject" data-subject="english">English</div>
+      </div>
+      <button class="scroll-arrow right-arrow">→</button>
     </div>
+  </section>
 
-    <!-- Right Content -->
-    <div class="teacher-content" id="teacherCards">
-      <!-- Cards will be loaded here by JavaScript -->
+  <!-- Teacher Cards Section -->
+  <section class="teacher-section">
+    <div class="teacher-container">
+      <div class="teacher-cards-grid">
+        <!-- Math Teachers (Default Visible) -->
+        <div class="teacher-card math">
+          <img src="images/teacher1.jpg" alt="Mr. Herdyanto Lim">
+          <h3>Mr. Herdyanto Limbong</h3>
+          <p>Mathematics</p>
+          <a href="#" class="more-info-btn">More Info</a>
+        </div>
+
+
+        <div class="teacher-card math">
+          <img src="images/teacher2.jpg" alt="Ms. Algebra Pro">
+          <h3>Mr. Christian Tantowi</h3>
+          <p>Mathematics</p>
+          <a href="#" class="more-info-btn">More Info</a>
+        </div>
+
+
+        <div class="teacher-card math">
+          <img src="images/teacher3.jpg" alt="Ms. Emi Gracelda">
+          <h3>Mr. Ryan Sianipar</h3>
+          <p>Mathematics</p>
+          <a href="#" class="more-info-btn">More Info</a>
+        </div>
+
+
+        <div class="teacher-card math">
+          <img src="images/teacher4.jpg" alt="Ms. Algebra Pro">
+          <h3>Ms. Emi Hutapea</h3>
+          <p>Mathematics</p>
+          <a href="#" class="more-info-btn">More Info</a>
+        </div>
+
+
+        <div class="teacher-card math">
+          <img src="images/teacher5.jpg" alt="Ms. Algebra Pro">
+          <h3>Mr. Arif Suprapti</h3>
+          <p>Mathematics</p>
+          <a href="#" class="more-info-btn">More Info</a>
+        </div>     
+
+
+        <div class="teacher-card math">
+          <img src="images/teacher6.jpg" alt="Ms. Algebra Pro">
+          <h3>Mr. Tulus Siagian</h3>
+          <p>Mathematics</p>
+          <a href="#" class="more-info-btn">More Info</a>
+        </div>        
+
+        
+        <!-- More teacher cards... -->
+      </div>
     </div>
-  </div>
+  </section>
 
-  <script src='js/teachersjs.js'></script>
+  <script src="js/teachersjs.js"></script>
 </body>
 </html>
