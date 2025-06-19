@@ -64,21 +64,23 @@ header {
 .nav-links li a {
   text-decoration: none;
   font-family: 'Barriecito', sans-serif;
-  color: #000000;
+  color: #4b3800;
   padding: 8px 0;
   display: flex;
   align-items: center;
+  transition: color 0.3s;
 }
 
-.nav-links li a :hover {
-  font-size: 16px;
-  color: #aa8414
+.nav-links li a:hover {
+  color: #aa8414;
+  transform: scale(1.1);
+  transition:all 0.3s;
 }
 
 .download-btn {
   text-decoration: none;
   background-color: white;
-  color: black;
+  color: #4b3800;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
